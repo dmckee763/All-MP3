@@ -1,6 +1,6 @@
 ﻿namespace ConvertAllMP3
 {
-	partial class Main
+	partial class frmMain
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -85,7 +85,7 @@
             this.btnSelectOutput.UseVisualStyleBackColor = true;
             this.btnSelectOutput.Click += new System.EventHandler(this.btnSelectOutput_Click);
             // 
-            // Main
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,7 +95,7 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtInputPath);
             this.Controls.Add(this.btnSelectInput);
-            this.Name = "Main";
+            this.Name = "frmMain";
             this.Text = "Convert All to MP3";
             this.ResumeLayout(false);
             this.PerformLayout();

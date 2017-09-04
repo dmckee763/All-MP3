@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ConvertAllMP3
 {
-	public partial class Main : Form
+	public partial class frmMain : Form
 	{
 		Converter converter;
-		public Main()
+		public frmMain()
 		{
 			InitializeComponent();
 			converter = new Converter();
@@ -40,7 +40,8 @@ namespace ConvertAllMP3
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            converter.Convert(txtInputPath.Text, txtOutputPath.Text);
+            //converter.Convert(txtInputPath.Text, txtOutputPath.Text);
+            converter.ConvertDirectory(txtOutputPath.Text.Trim());
         }
 
         #endregion
