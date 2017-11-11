@@ -63,10 +63,7 @@ namespace ConvertAllMP3
                 {
                     try
                     {
-                        
-
-
-
+                        Convert(process, file, @"E:\");
                     }
                     catch(FileNotFoundException ex)
                     {
@@ -82,13 +79,11 @@ namespace ConvertAllMP3
             }
         }
 
-        private void Convert(string inputPath, string outputPath)
+        private void Convert(Process process, string inputPath, string outputPath)
         {
             fileName = Path.GetFileNameWithoutExtension(inputPath);
             this.outputPath = outputPath;
 
-            Process process = ProcessSetup();
-            process.Start();
 
             //Convert .m4a to .wav using faad.exe
             string faadCommand = GetFaadCommand(inputPath, outputPath);
@@ -104,6 +99,29 @@ namespace ConvertAllMP3
             process.StandardInput.WriteLine("Exit");
 
         }
+
+        //private void Convert(string inputPath, string outputPath)
+        //{
+        //    fileName = Path.GetFileNameWithoutExtension(inputPath);
+        //    this.outputPath = outputPath;
+
+        //    Process process = ProcessSetup();
+        //    process.Start();
+
+        //    //Convert .m4a to .wav using faad.exe
+        //    string faadCommand = GetFaadCommand(inputPath, outputPath);
+
+        //    process.StandardInput.WriteLine(faadCommand);
+
+        //    //Convert .wav .mp3 using lame.exe
+
+        //    string lameCommand = GetLameCommand(inputPath, outputPath);
+        //    process.StandardInput.WriteLine(lameCommand);
+
+        //    //Closes cmd window
+        //    process.StandardInput.WriteLine("Exit");
+
+        //}
 
         private string GetFaadCommand(string inputPath, string outputPath)
         {
