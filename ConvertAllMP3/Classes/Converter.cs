@@ -11,7 +11,7 @@ using ConvertAllMP3.Classes;
 
 namespace ConvertAllMP3
 {
-	class Converter
+	class Converter  
 	{
         private string fileName;
         private string outputPath;
@@ -99,29 +99,6 @@ namespace ConvertAllMP3
             process.StandardInput.WriteLine("Exit");
 
         }
-
-        //private void Convert(string inputPath, string outputPath)
-        //{
-        //    fileName = Path.GetFileNameWithoutExtension(inputPath);
-        //    this.outputPath = outputPath;
-
-        //    Process process = ProcessSetup();
-        //    process.Start();
-
-        //    //Convert .m4a to .wav using faad.exe
-        //    string faadCommand = GetFaadCommand(inputPath, outputPath);
-
-        //    process.StandardInput.WriteLine(faadCommand);
-
-        //    //Convert .wav .mp3 using lame.exe
-
-        //    string lameCommand = GetLameCommand(inputPath, outputPath);
-        //    process.StandardInput.WriteLine(lameCommand);
-
-        //    //Closes cmd window
-        //    process.StandardInput.WriteLine("Exit");
-
-        //}
 
         private string GetFaadCommand(string inputPath, string outputPath)
         {
